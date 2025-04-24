@@ -1,49 +1,13 @@
-name: Workflow de Pull Request
-
-# Define quando a automação será acionada
-on:
-  pull_request:
-    branches:
-      - main  # Define que o PR será para a branch 'main'
+name: Esteira pull request
+run-name: Esteira pull request
+on: pull_request
 
 jobs:
-  build:
-    runs-on: ubuntu-latest  # Define o ambiente onde o job será executado
-    
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
     steps:
-    # Passo 1: Verificar o código do repositório
-    - name: Checar o código do repositório
-      uses: actions/checkout@v2  # Faz o checkout do código no repositório
+      - run: echo "Iniciando automação."
+      - run: echo "Automação em andamento. Por favor, aguarde."
+      - run: echo "Processo concluído."
 
-    # Passo 2: Definir a versão do Node.js
-    - name: Configurar Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16'  # Define a versão do Node.js a ser usada
-
-    # Passo 3: Instalar dependências
-    - name: Instalar dependências
-      run: |
-        echo "Instalando dependências..."
-        npm install  # Exemplo de comando para instalar dependências
-
-    # Passo 4: Exibir a primeira mensagem
-    - name: Exibir a primeira mensagem
-      run: echo "Iniciando os testes no pull request!"
-
-    # Passo 5: Rodar os testes
-    - name: Rodar os testes
-      run: |
-        echo "Rodando os testes..."
-        npm test  # Exemplo de comando para rodar testes em um projeto Node.js
-        echo "Testes finalizados!"
-
-    # Passo 6: Verificar a versão do Node.js
-    - name: Verificar versão do Node.js
-      run: node --version
-
-    # Passo 7: Exibir a mensagem de conclusão
-    - name: Exibir a mensagem de sucesso
-      run: echo "O workflow foi concluído com sucesso!"
-
-      // feito por leonardo jose e gabriel jardim (foi feito tudo que conseguimos com pesquisas pois nao vimos tudo isso em sala de aula)
+      # feito por leonardo jose e gabriel jardim (foi feito tudo que conseguimos com pesquisas pois nao vimos tudo isso em sala de aula)
